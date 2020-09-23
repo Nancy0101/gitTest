@@ -1,0 +1,78 @@
+{
+  "dataZone":{
+    "foodList":[
+      {
+        "fhead": "招牌",
+        "imgurl":"img/sp01.png",
+        "fname":"纯鲜肉（水饺）",
+        "fingredients":"新鲜猪肉",
+        "fprice":15,
+        "fcount":3
+      },
+      {
+        "fhead": "招牌",
+        "imgurl":"img/sp02.png",
+        "fname":"玉米鲜肉（水饺）",
+        "fingredients":"玉米鲜肉",
+        "fprice":16,
+        "fcount":2
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp03.png",
+        "fname":"虾仁三鲜（蒸饺）",
+        "fingredients":"虾仁三鲜",
+        "fprice":22,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp04.png",
+        "fname":"素三鲜（蒸饺）",
+        "fingredients":"素三鲜",
+        "fprice":15,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp05.png",
+        "fname":"角瓜鸡蛋（蒸饺）",
+        "fingredients":"角瓜鸡蛋",
+        "fprice":16,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp06.png",
+        "fname":"小白菜肉（水饺）",
+        "fingredients":"小白菜肉",
+        "fprice":18,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp07.png",
+        "fname":"芹菜牛肉（水饺）",
+        "fingredients":"芹菜牛肉",
+        "fprice":18,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp04.png",
+        "fname":"素三鲜（蒸饺）",
+        "fingredients":"素三鲜",
+        "fprice":15,
+        "fcount":0
+      },
+      {
+        "fhead": "",
+        "imgurl":"img/sp04.png",
+        "fname":"素三鲜（蒸饺）",
+        "fingredients":"素三鲜",
+        "fprice":15,
+        "fcount":0
+      }
+    ]
+  }
+}

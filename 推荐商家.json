@@ -1,0 +1,91 @@
+{
+  "dataZone": {
+    "firstList": [
+      {
+        "fihead": "新店",
+        "imgurl":"img/sj01.png",
+        "finame":"万家饺子（软件园E18店）",
+        "fistart":"15起送",
+        "fisend":"3配送",
+        "fitype":"各种饺子炒菜",
+        "finew":"新",
+        "finewe":"饿了么新用户首单立减9元",
+        "fite":"特",
+        "fitejia":"特价商品5元起",
+        "fiselect":"*",
+        "fisong":"蜂鸟专送",
+        "fifar":"3.22km",
+        "fitime":"30分钟",
+        "fiactive":"2个活动"
+      },
+      {
+        "fihead": "",
+        "imgurl":"img/sj02.png",
+        "finame":"小锅饭豆腐店（全运店）",
+        "fistart":"15起送",
+        "fisend":"3配送",
+        "fitype":"特色美食",
+        "finew":"新",
+        "finewe":"饿了么新用户首单立减9元",
+        "fite":"特",
+        "fitejia":"特价商品5元起",
+        "fiselect":"*",
+        "fisong":"蜂鸟专送",
+        "fifar":"3.22km",
+        "fitime":"30分钟",
+        "fiactive":"2个活动"
+      },
+      {
+        "fihead": "",
+        "imgurl":"img/sj03.png",
+        "finame":"麦当劳麦乐送（全运店）",
+        "fistart":"15起送",
+        "fisend":"3配送",
+        "fitype":"汉堡薯条",
+        "finew":"新",
+        "finewe":"饿了么新用户首单立减9元",
+        "fite":"特",
+        "fitejia":"特价商品5元起",
+        "fiselect":"*",
+        "fisong":"蜂鸟专送",
+        "fifar":"3.22km",
+        "fitime":"30分钟",
+        "fiactive":"2个活动"
+      },
+      {
+        "fihead": "",
+        "fimgurl":"img/sj04.png",
+        "finame":"米村拌饭（浑南店）",
+        "fistart":"15起送",
+        "fisend":"3配送",
+        "fitype":"各种炒菜拌饭",
+        "finew":"新",
+        "finewe":"饿了么新用户首单立减9元",
+        "fite":"特",
+        "fitejia":"特价商品5元起",
+        "fiselect":"*",
+        "fisong":"蜂鸟专送",
+        "fifar":"3.22km",
+        "fitime":"30分钟",
+        "fiactive":"2个活动"
+      },
+      {
+        "fihead": "",
+        "imgurl":"img/sj05.png",
+        "finame":"申记串道（中海康城店）",
+        "fistart":"15起送",
+        "fisend":"3配送",
+        "fitype":"烤串炸串",
+        "finew":"新",
+        "finewe":"饿了么新用户首单立减9元",
+        "fite":"特",
+        "fitejia":"特价商品5元起",
+        "fiselect":"*",
+        "fisong":"蜂鸟专送",
+        "fifar":"3.22km",
+        "fitime":"30分钟",
+        "fiactive":"2个活动"
+      }
+    ]
+  }
+}

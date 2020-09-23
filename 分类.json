@@ -1,0 +1,44 @@
+{
+  "dataZone":{
+    "typeList":[
+      {
+        "imgurl": "img/dcfl01.png",
+        "tname": "美食"
+      },
+      {
+        "imgurl": "img/dcfl02.png",
+        "tname": "早餐"
+      },
+      {
+        "imgurl": "img/dcfl03.png",
+        "tname": "跑腿代购"
+      },
+      {
+        "imgurl": "img/dcfl04.png",
+        "tname": "汉堡披萨"
+      },
+      {
+        "imgurl": "img/dcfl05.png",
+        "tname": "甜品饮品"
+      },
+      {
+        "imgurl": "img/dcfl06.png",
+        "tname": "速食简餐"
+      },{
+        "imgurl": "img/dcfl07.png",
+        "tname": "地方小吃"
+      },
+      {
+        "imgurl": "img/dcfl08.png",
+        "tname": "米粉面馆"
+      },
+      {
+        "imgurl": "img/dcfl09.png",
+        "tname": "包子粥铺"
+      },{
+        "imgurl": "img/dcfl010.png",
+        "tname": "炸鸡炸串"
+      }
+        ]
+  }
+}
