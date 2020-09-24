@@ -198,145 +198,86 @@
       "stype": "各种春饼"
     }
   ],
-  "firstLists": [
-    {
-      "fihead": "新店",
-      "imgurl": "img/sj01.png",
-      "finame": "万家饺子（软件园E18店）",
-      "fistart": "15起送",
-      "fisend": "3配送",
-      "fitype": "各种饺子炒菜",
-      "finew": "新",
-      "finewe": "饿了么新用户首单立减9元",
-      "fite": "特",
-      "fitejia": "特价商品5元起",
-      "fiselect": "*",
-      "fisong": "蜂鸟专送",
-      "fifar": "3.22km",
-      "fitime": "30分钟",
-      "fiactive": "2个活动"
-    },
-    {
-      "fihead": "",
-      "imgurl": "img/sj02.png",
-      "finame": "小锅饭豆腐店（全运店）",
-      "fistart": "15起送",
-      "fisend": "3配送",
-      "fitype": "特色美食",
-      "finew": "新",
-      "finewe": "饿了么新用户首单立减9元",
-      "fite": "特",
-      "fitejia": "特价商品5元起",
-      "fiselect": "*",
-      "fisong": "蜂鸟专送",
-      "fifar": "3.22km",
-      "fitime": "30分钟",
-      "fiactive": "2个活动"
-    },
-    {
-      "fihead": "",
-      "imgurl": "img/sj03.png",
-      "finame": "麦当劳麦乐送（全运店）",
-      "fistart": "15起送",
-      "fisend": "3配送",
-      "fitype": "汉堡薯条",
-      "finew": "新",
-      "finewe": "饿了么新用户首单立减9元",
-      "fite": "特",
-      "fitejia": "特价商品5元起",
-      "fiselect": "*",
-      "fisong": "蜂鸟专送",
-      "fifar": "3.22km",
-      "fitime": "30分钟",
-      "fiactive": "2个活动"
-    },
-    {
-      "fihead": "",
-      "fimgurl": "img/sj04.png",
-      "finame": "米村拌饭（浑南店）",
-      "fistart": "15起送",
-      "fisend": "3配送",
-      "fitype": "各种炒菜拌饭",
-      "finew": "新",
-      "finewe": "饿了么新用户首单立减9元",
-      "fite": "特",
-      "fitejia": "特价商品5元起",
-      "fiselect": "*",
-      "fisong": "蜂鸟专送",
-      "fifar": "3.22km",
-      "fitime": "30分钟",
-      "fiactive": "2个活动"
-    },
-    {
-      "fihead": "",
-      "imgurl": "img/sj05.png",
-      "finame": "申记串道（中海康城店）",
-      "fistart": "15起送",
-      "fisend": "3配送",
-      "fitype": "烤串炸串",
-      "finew": "新",
-      "finewe": "饿了么新用户首单立减9元",
-      "fite": "特",
-      "fitejia": "特价商品5元起",
-      "fiselect": "*",
-      "fisong": "蜂鸟专送",
-      "fifar": "3.22km",
-      "fitime": "30分钟",
-      "fiactive": "2个活动"
-    }
-  ],
-  "advertising": {
-    "title": "品质套餐",
-    "description": "搭配齐全吃得好",
-    "href": "#/暂时留空",
-    "bgImgSrc": "img/index_banner.png"
-  },
   "recommendMerchant": [
     {
       "imgSrc": "img/sj01.png",
-      "name": "万家饺子(睿道店)",
+      "name": "万家饺子(软件园E18店)",
       "star": 5,
-      "score": 4.8,
-      "sales": 344,
-      "delivery": "美团の",
+      "score": 4.9,
+      "sales": 345,
+      "delivery": "蜂鸟专送",
       "start": 15,
       "deliveryCost": 3,
-      "distance": 3.33,
+      "distance": 3.22,
       "time": 30,
-      "tips": "各种饺子海菜包子",
-      "activity": [
-        {
-          "type": 1,
-          "des": "新用户首单立减999元"
-        },
-        {
-          "type": 2,
-          "des": "特价商品不要钱"
-        }
-      ]
+      "tips": "各种饺子",
+      "new": "饿了么新用户首单立减9元",
+      "special": "特价商品五折起",
+      "event": "2个活动"
     },
     {
       "imgSrc": "img/sj02.png",
-      "name": "李家饺子(睿道店)",
-      "star": 4,
-      "score": 4.8,
-      "sales": 344,
-      "delivery": "美团の",
+      "name": "小锅饭豆腐店（全运店）",
+      "star": 5,
+      "score": 4.9,
+      "sales": 345,
+      "delivery": "蜂鸟专送",
       "start": 15,
       "deliveryCost": 3,
-      "distance": 3.33,
+      "distance": 3.22,
       "time": 30,
-      "tips": "鲅鱼饼子",
-      "activity": [
-        {
-          "type": 1,
-          "des": "新用户首单不要钱"
-        },
-        {
-          "type": 2,
-          "des": "特价商品不要钱"
-        }
-      ]
+      "tips": "各种豆腐盖饭",
+      "new": "饿了么新用户首单立减9元",
+      "special": "特价商品五折起",
+      "event": "2个活动"
+    },
+    {
+      "imgSrc": "img/sj03.png",
+      "name": "麦当劳麦乐送（全运店）",
+      "star": 5,
+      "score": 4.9,
+      "sales": 345,
+      "delivery": "蜂鸟专送",
+      "start": 15,
+      "deliveryCost": 3,
+      "distance": 3.22,
+      "time": 30,
+      "tips": "快餐",
+      "new": "饿了么新用户首单立减9元",
+      "special": "特价商品五折起",
+      "event": "2个活动"
+    },
+    {
+      "imgSrc": "img/sj04.png",
+      "name": "米村拌饭（浑南店）",
+      "star": 5,
+      "score": 4.9,
+      "sales": 345,
+      "delivery": "蜂鸟专送",
+      "start": 15,
+      "deliveryCost": 3,
+      "distance": 3.22,
+      "time": 30,
+      "tips": "各种拌饭",
+      "new": "饿了么新用户首单立减9元",
+      "special": "特价商品五折起",
+      "event": "2个活动"
+    },
+    {
+      "imgSrc": "img/sj05.png",
+      "name": "申记串道（中海康城店）",
+      "star": 5,
+      "score": 4.9,
+      "sales": 345,
+      "delivery": "蜂鸟专送",
+      "start": 15,
+      "deliveryCost": 3,
+      "distance": 3.22,
+      "time": 30,
+      "tips": "各种豆腐盖饭",
+      "new": "饿了么新用户首单立减9元",
+      "special": "特价商品五折起",
+      "event": "2个活动"
     }
   ]
 }
