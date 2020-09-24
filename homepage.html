@@ -306,7 +306,7 @@
         router: router,
         //挂载钩子上添加获取数据的处理
         mounted: function () {
-            this.$http.get("data.json").then(
+            this.$http.get("goods.json").then(
                 function (res) {
                     this.foodCategory = res.body.foodCategory;
                     this.recommendMerchant = res.body.recommendMerchant;
