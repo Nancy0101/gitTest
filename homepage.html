@@ -7,7 +7,7 @@
     <!-- 引入 Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <link href="css/animate.css" rel="stylesheet"/>
-    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="framework/font-awesome/css/font-awesome.css" rel="stylesheet"/>
     <link href="css/custom.css" rel="stylesheet"/>
     <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -39,9 +39,7 @@
     <div>
         <topcpn>
             <h3 class="currentLoc font-weight-bolder text-white offset-1" slot="loc">
-                <i class="fa fa-map-marker"></i>
-                沈阳市规划大厦
-                <i class="fa fa-caret-down"></i>
+                <i class="fa fa-map-marker"></i>河口软件园<i class="fa fa-caret-down"></i>
             </h3>
             <div slot="info" class="col-10 offset-1 ">
                 <div class="input-group mb-3 mt-3">
@@ -54,31 +52,13 @@
         </topcpn>
         <!--        美食分类展示,采用简单的直接调取root组件数据的方式处理-->
         <foodcategorycpn></foodcategorycpn>
+
+        <bannercpn></bannercpn>
+        <supermembercpn></supermembercpn>
+        <recommendcpn></recommendcpn>
+        <recommendtypecpn></recommendtypecpn>
         <!--        推荐商户展示-->
         <recommendmerchantcpn></recommendmerchantcpn>
-
-        <div class="container-fluid lists">
-            <div class="row  text-muted">
-                <div class="col-12 col-sm-2">
-                    <img src="img/sj01.png" alt="" />
-                </div>
-                <div class="col-8 col-sm-6">
-                    <h3 class="font-weight-bolder text-dark">万家饺子（软件园E18店）</h3>
-                    <p><i class="fa fa-star text-warning"></i> 4.9 月售345单</p>
-                    <p>各种饺子</p>
-                    <p><span>新</span>新用户xxxxxx</p>
-                    <p><span>特</span>特价用户</p>
-                </div>
-                <div class="col-4 col-sm-4">
-                    <p>.</p>
-                    <p><span>美团外卖</span></p>
-                    <p>3.22km | 30分钟</p>
-                    <p><i class="fa fa-arrow-circle-down"></i></p>
-                </div>
-            </div>
-        </div>
-
-
         <!-- 引入返回顶部的组件 -->
         <gotopcpn></gotopcpn>
         <!--  主导航条-->
@@ -93,11 +73,57 @@
         <!--        如果是多层组件的封装方式,可以使用$root调用根组件数据-->
         <router-link to="/merchantlist"
                      v-for="(item,index) in $root.foodCategory"
-                     :key="index" class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+                     :key="index" class="col-3 text-center">
             <img v-bind:src="item.imgSrc"/>{{item.categoryName}}
         </router-link>
     </div>
 </template>
+<!-- 横幅广告部分 -->
+<template id="bannerTemp">
+    <div class="container-fluid bannerTemp">
+        <div class="row">
+            <div class="col-6">
+                <h3>品质套餐</h3>
+                <p>搭配齐全吃得好</p>
+                <a href="order.html">立即抢购 &gt;</a>
+            </div>
+                <div class="col-6">
+                    <img src="img/banner.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- 超级会员部分 -->
+<template id="supermemberTemp">
+    <div class="supermemberTemp">
+            <p>
+                <img src="img/super_member.png">
+                <span class="font-weight-bolder text-dark">超级会员</span>
+                <span>• 每月享超值权益</span>
+                <a href="login.html"> 立即开通 &gt; </a>
+            </p>
+    </div>
+</template>
+<!-- 推荐商家部分 -->
+<template id="recommendTemp">
+    <span class="recommendTemp">
+        <p class="text-center"><span> - 推荐商家 - </span></p>
+    </span>
+</template>
+
+<!--推荐方式-->
+<template id="recommendTypeTemp">
+    <div class="container-fluid recommendTypeTemp text-muted">
+        <div class="row">
+            <h7 class="col-3">综合排序<i class="fa fa-caret-down"></i></h7>
+            <h7 class="col-3">距离最近</h7>
+            <h7 class="col-3">销量最高</h7>
+            <h7 class="col-3">筛选<i class="fa fa-filter"></i></h7>
+        </div>
+    </div>
+</template>
+
 <!--推荐商户模板-->
 <template id="recommendMerchantTemp">
     <div class="container-fluid lists">
@@ -107,16 +133,17 @@
             </div>
             <div class="col-8 col-sm-6">
                 <h3 class="font-weight-bolder text-dark">{{item.name}}</h3>
-                <p><i v-for="i in item.star" class="fa fa-star text-warning"></i> 4.9 月售345单</p>
-                <p>各种饺子</p>
-                <p><span>新</span>新用户xxxxxx</p>
-                <p><span>特</span>特价用户</p>
+                <p><i v-for="i in item.star" class="fa fa-star text-warning"></i>{{item.score}} 月售{{item.sales}}单</p>
+                <p>￥{{item.start}}起送 | ￥{{item.deliveryCost}}配送</p>
+                <p>{{item.tips}}</p>
+                <p><span class="business-info-promotion-left-incon">新 </span>{{item.new}}</p>
+                <p><span class="business-info-promotion-left-incon">特 </span>{{item.special}}</p>
             </div>
             <div class="col-4 col-sm-4">
                 <p>.</p>
-                <p><span>美团外卖</span></p>
-                <p>3.22km | 30分钟</p>
-                <p><i class="fa fa-arrow-circle-down"></i></p>
+                <p><span>{{item.delivery}}</span></p>
+                <p>{{item.distance}}km | {{item.time}}分钟</p>
+                <p>{{item.event}} <i class="fa fa-arrow-circle-down"></i></p>
             </div>
         </div>
     </div>
@@ -251,6 +278,18 @@
     let foodCategoryCpn = Vue.extend({
         template: "#foodCategoryTemp",
     });
+    let bannerCpn = Vue.extend({
+        template:'#bannerTemp',
+    });
+    let supermemberCpn = Vue.extend({
+        template:'#supermemberTemp',
+    });
+    let recommendCpn = Vue.extend({
+        template:'#recommendTemp',
+    });
+    let recommendTypeCpn = Vue.extend({
+        template:'#recommendTypeTemp',
+    });
     let recommendMerchantCpn = Vue.extend({
         template: "#recommendMerchantTemp",
     });
@@ -273,6 +312,10 @@
     Vue.component("topcpn", topCpn);
     Vue.component("indexcpn", indexCpn);
     Vue.component("foodcategorycpn", foodCategoryCpn);
+    let bannercpn = Vue.component('bannercpn',bannerCpn);
+    let supermembercpn = Vue.component('supermembercpn',supermemberCpn);
+    let recommendcpn = Vue.component('recommendcpn',recommendCpn);
+    let recommendtypecpn = Vue.component('recommendtypecpn',recommendTypeCpn);
     Vue.component("recommendmerchantcpn", recommendMerchantCpn);
     Vue.component("merchantlistcpn", merchantListCpn);
     Vue.component("merchantinfocpn", merchantInfoCpn);
