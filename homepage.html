@@ -114,10 +114,10 @@
 <template id="recommendTypeTemp">
     <div class="container-fluid recommendTypeTemp text-muted">
         <div class="row">
-            <h7 class="col-3">综合排序<i class="fa fa-caret-down"></i></h7>
-            <h7 class="col-3">距离最近</h7>
-            <h7 class="col-3">销量最高</h7>
-            <h7 class="col-3">筛选<i class="fa fa-filter"></i></h7>
+            <h6 class="col-3">综合排序<i class="fa fa-caret-down"></i></h6>
+            <h6 class="col-3">距离最近</h6>
+            <h6 class="col-3">销量最高</h6>
+            <h6 class="col-3">筛选<i class="fa fa-filter"></i></h6>
         </div>
     </div>
 </template>
@@ -198,9 +198,11 @@
                 <router-link to="/merchantlist"><i class="fa fa-compass"></i>发现</router-link>
             </h6>
             <h6 class="col-3">
-                <router-link to="/merchantInfo"><i class="fa fa-file-text-o"></i>订单</router-link>
+                <router-link to="/dingdan"><i class="fa fa-file-text-o"></i>订单</router-link>
             </h6>
-            <h6 class="col-3"><i class="fa fa-user-o"></i>我的</h6>
+            <h6 class="col-3">
+                <router-link to="/denglu"><i class="fa fa-user-o"></i>我的</router-link>
+            </h6>
         </div>
     </div>
 </template>
@@ -213,6 +215,302 @@
     </div>
 </template>
 
+<!--我的-->
+<!--登录界面-->
+<template id="dengLu">
+    <div>
+        <topcpn>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 >用户登录</h1>
+            </div>
+        </topcpn>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">手机号码：</span>
+            </div>
+            <input type="text" class="form-control" placeholder="请输入手机号">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">密码：</span>
+            </div>
+            <input type="password" class="form-control" placeholder="请输入密码">
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <button type="submit" class="btn btn-success btn-lg col-10 offset-1" >登录</button>
+            </div>
+        </div>
+        <br/>
+        <router-link to="/zhuce">
+            <div class="container-fluid">
+                <div class="row">
+                    <button type="submit" class="btn btn-primary btn-lg col-10 offset-1" >去注册</button>
+                </div>
+            </div>
+        </router-link>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+<!--注册-->
+<template id="zhuCe">
+    <div>
+        <topcpn>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 >用户注册</h1>
+            </div>
+        </topcpn>
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">手机号码：</span>
+                </div>
+                <input type="tel" class="form-control"   placeholder="请输入手机号">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> 输入密码：</span>
+                </div>
+                <input type="password" class="form-control"  placeholder="请输入密码">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">确认密码：</span>
+                </div>
+                <input type="tel" class="form-control"   placeholder="请确认密码">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">用户姓名：</span>
+                </div>
+                <input type="password" class="form-control"  placeholder="请输入您的用户名">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">性别：</span>
+                </div>
+                <input type="radio" name="sex" checked >男
+                <input type="radio" name="sex" >女
+            </div>
+            <router-link to="/denglu">
+                <div class="container-fluid">
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary btn-lg col-10 offset-1" >注册</button>
+                    </div>
+                </div>
+            </router-link>
+        </form>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+<!--在线支付界面-->
+<template id="zhiFu">
+    <div>
+        <topcpn>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 >在线支付</h1>
+            </div>
+        </topcpn>
+        <h3>订单信息：</h3>
+        <div class="container-fluid">
+            <div class="row">
+                <span class="col-11">
+                    万家饺子（软件园E18店）
+                    <div  v-on:click="xiala=!xiala">
+                    <i class="fa fa-caret-down "></i>
+                    </div>
+                </span>
+                <span class="col-1">￥49</span>
+            </div>
+        </div>
+        <div class="container-fluid" v-show="xiala">
+            <div class="row">
+                <span class="col-11">纯肉鲜肉（水饺） x 2</span>
+                <span class="col-1">￥15</span>
+                <span class="col-11">玉米鲜肉（水饺） x 1</span>
+                <span class="col-1">￥16</span>
+                <span class="col-11">配送费</span>
+                <span class="col-1">￥3</span>
+            </div>
+        </div>
+
+
+        <div>
+            <img src="img/alipay.png">
+            <i class="fa fa-check-circle"></i>
+        </div>
+        <div>
+            <img src="img/wechat.png" >
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success btn-lg col-10 offset-1">确认支付</button>
+        </div>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
+
+<!--确认支付界面 -->
+<template id="queRen">
+
+    <div>
+        <topcpn>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 >确认支付</h1>
+            </div>
+        </topcpn>
+        <div class="">
+            <h5>订单配送至：</h5>
+            <div>
+                <p>沈阳市浑南区智慧四街1-121号</p>
+                <i class="fa fa-angle-right"></i>
+            </div>
+            <p>习近平先生 13656785432</p>
+        </div>
+        <h3>万家饺子（软件园E18店）</h3>
+        <hr/>
+        <div class="container-fluid">
+            <div class="row">
+                <img src="img/sp01.png" class="col-2">
+                <span class="col-8 offset-1">纯肉鲜肉（水饺） x 2</span>
+                <span class="col-1">￥15</span>
+
+                <img src="img/sp02.png" class="col-2">
+                <span class="col-8 offset-1">玉米鲜肉（水饺） x 1</span>
+                <span class="col-1">￥16</span>
+                <p class="col-12"></p>
+                <p class="col-11">配送费</p>
+                <p class="col-1">￥3</p>
+            </div>
+        </div>
+
+        <div class="container-fluid fixed-bottom mainNavTemp text-muted">
+            <div class="row">
+                <div class="col-8">
+                    ￥49
+                </div>
+                <div class="col-4">
+                    <router-link to="/zhifu">
+                        <div>
+                            去支付
+                        </div>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mainnavcpn></mainnavcpn>
+    <gotopcpn></gotopcpn>
+    </div>
+</template>
+<!--订单界面-->
+<template id="dingDan">
+
+    <div>
+        <topcpn>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 >我的订单</h1>
+            </div>
+        </topcpn>
+        <div class="container-fluid">
+            <div class="row">
+                <p class="col-9">
+                    万家饺子（软件园E18店）
+                <div  v-on:click="xiala1=!xiala1">
+                    <i class="fa fa-caret-down" ></i>
+                </div>
+                </p>
+                <p class="col-1">&#165;49</p>
+                <router-link to="/zhifu">
+                    <div class="order-info-right-icon bg-warning" to="/zhifu">去支付</div>
+                </router-link>
+            </div>
+        </div>
+        <div class="container-fluid" v-show="xiala1">
+            <div class="row">
+                <p class="col-11">纯肉鲜肉（水饺） x 2</p>
+                <p class="col-1">&#165;15</p>
+                <p class="col-11">玉米鲜肉（水饺） x 1</p>
+                <p class="col-1">&#165;16</p>
+                <p class="col-11">配送费</p>
+                <p class="col-1">&#165;3</p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <p class="col-9">
+                    小锅饭豆腐馆（全运店）
+                <div  v-on:click="xiala2=!xiala2"  >
+                    <i class="fa fa-caret-down" ></i>
+                </div>
+                </p>
+                <p class="col-1">&#165;55</p>
+                <router-link to="/zhifu">
+                    <div class="order-info-right-icon bg-warning" >去支付</div>
+                </router-link>
+            </div>
+        </div>
+        <div class="container-fluid" v-show="xiala2">
+            <div class="row">
+                <p class="col-11">纯肉鲜肉（水饺） x 2</p>
+                <p class="col-1">&#165;15</p>
+                <p class="col-11">玉米鲜肉（水饺） x 1</p>
+                <p class="col-1">&#165;16</p>
+                <p class="col-11">配送费</p>
+                <p class="col-1">&#165;3</p>
+            </div>
+        </div>
+        <h3>已支付订单信息：</h3>
+        <div class="container-fluid">
+            <div class="row">
+                <p class="col-10">
+                    万家饺子（软件园E18店）
+                <div  v-on:click="xiala3=!xiala3" >
+                    <i class="fa fa-caret-down" ></i>
+                </div>
+                </p>
+                <p class="col-1">&#165;49</p>
+            </div>
+        </div>
+        <div class="container-fluid" v-show="xiala3">
+            <div class="row">
+                <p class="col-11">纯肉鲜肉（水饺） x 2</p>
+                <p class="col-1">&#165;15</p>
+                <p class="col-11">玉米鲜肉（水饺） x 1</p>
+                <p class="col-1">&#165;16</p>
+                <p class="col-11">配送费</p>
+                <p class="col-1">&#165;3</p>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <p class="col-10">
+                    小锅饭豆腐馆（全运店）
+                <div  v-on:click="xiala4=!xiala4" >
+                    <i class="fa fa-caret-down" ></i>
+                </div>
+                </p>
+                <p class="col-1">&#165;55</p>
+            </div>
+        </div>
+        <div class="container-fluid" v-show="xiala4">
+            <div class="row">
+                <p class="col-11">纯肉鲜肉（水饺） x 2</p>
+                <p class="col-1">&#165;15</p>
+                <p class="col-11">玉米鲜肉（水饺） x 1</p>
+                <p class="col-1">&#165;16</p>
+                <p class="col-11">配送费</p>
+                <p class="col-1">&#165;3</p>
+            </div>
+        </div>
+        <mainnavcpn></mainnavcpn>
+        <gotopcpn></gotopcpn>
+    </div>
+</template>
 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 <script src="js/jquery-3.3.1.js"></script>
 <!-- 包括所有已编译的插件 -->
@@ -302,6 +600,38 @@
         template: "#topTemp",
     });
 
+
+    //登录注册界面创建组件
+    let dengLuCpn = Vue.extend({
+        template:'#dengLu',
+    });
+    let zhuCeCpn = Vue.extend({
+        template:'#zhuCe',
+    });
+    //支付，确认支付，订单界面
+    let zhiFuCpn = Vue.extend({
+        template: '#zhiFu',
+        data: function () {
+            return {
+                xiala: false
+            }
+        }
+    });
+    let queRenCpn = Vue.extend({
+        template: '#queRen',
+    });
+    let dingDanCpn = Vue.extend({
+        template: '#dingDan',
+        data: function () {
+            return {
+                xiala1: false,
+                xiala2: false,
+                xiala3: false,
+                xiala4: false,
+            }
+        }
+    });
+
     //注册为全局组件
     Vue.component("gotopcpn", goTopCpn);
     Vue.component("mainnavcpn", mainNavCpn);
@@ -315,11 +645,20 @@
     Vue.component("recommendmerchantcpn", recommendMerchantCpn);
     Vue.component("merchantlistcpn", merchantListCpn);
     Vue.component("merchantinfocpn", merchantInfoCpn);
+
+    //登录界面注册组件
+    let zhucecpn = Vue.component('zhucecpn',zhuCeCpn);
+    let denglucpn = Vue.component('denglucpn',dengLuCpn);
+    //注册确认支付、在线支付、订单组件
+    let zhifucpn = Vue.component('zhifucpn', zhiFuCpn);
+    let dingdancpn = Vue.component('dingdancpn', dingDanCpn);
+    let querencpn = Vue.component('querencpn', queRenCpn);
+
     //配置路由
     let routes = [
         {path: '/index', component: indexCpn},
         {path: '/merchantlist', component: merchantListCpn},
-        {path: '/merchantInfo', component: merchantInfoCpn},
+        // {path: '/merchantInfo', component: merchantInfoCpn},
         /*{path: '/curs', component: curs,
             //配置子路由
             children: [
@@ -327,6 +666,13 @@
                 {path: 'normal',component:  normal},
                 {path: 'base',component:  base}
             ]},*/
+
+        {path:'/denglu',component:dengLuCpn},
+        {path:'/zhuce',component:zhuCeCpn},
+        {path: '/zhifu', component: zhiFuCpn},
+        {path: '/queren', component: queRenCpn},
+        {path: '/dingdan', component: dingDanCpn},
+
         {path: '/', redirect: '/index'},
         {path: '*', redirect: '/index'}
     ];
