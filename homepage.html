@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>饿了吗</title>
+    <title>饿了吗Vue基础实现版</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- 引入 Bootstrap -->
@@ -24,11 +24,13 @@
 </head>
 
 
+
 <body>
 <div id="app">
     <transition enter-active-class="animated fadeIn">
         <router-view></router-view>
     </transition>
+
 
 
 </div>
@@ -67,15 +69,10 @@
 <template id="foodCategoryTemp">
     <div class="row foodCategoryTemp">
         <!--        如果是多层组件的封装方式,可以使用$root调用根组件数据-->
-<!--        <router-link to="/merchantlist"-->
-<!--                     v-for="(item,index) in $root.foodCategory"-->
-<!--                     :key="index" class="col-3 text-center">-->
-<!--            <img v-bind:src="item.imgSrc"/>{{item.categoryName}}-->
-<!--        </router-link>-->
-        <router-link to="merchantlist"
+        <router-link to="/merchantlist"
                      v-for="(item,index) in $root.foodCategory"
-                     class="col-2 text-center mt-3"  :class="{'offset-1':!(index%5)}"/>
-              <img v-bind:src="item.imgSrc"/>{{item.categoryName}}
+                     :key="index" class="col-3 text-center">
+            <img v-bind:src="item.imgSrc"/>{{item.categoryName}}
         </router-link>
     </div>
 </template>
@@ -88,25 +85,22 @@
                 <p>搭配齐全吃得好</p>
                 <a href="order.html">立即抢购 &gt;</a>
             </div>
-            <div class="col-6 text-right text-center">
-                <img src="img/banner.png">
+                <div class="col-6">
+                    <img src="img/banner.png">
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 <!-- 超级会员部分 -->
 <template id="supermemberTemp">
-    <div class="container-fluid supermemberTemp">
-        <div class="row">
-            <div class="col-12">
-
-            <img src="img/super_member.png ">
-            <span class="font-weight-bolder text-dark">超级会员</span>
-            <span>• 每月享超值权益</span>
-            <a href="login.html"> 立即开通 &gt; </a>
-            </div>
-        </div>
+    <div class="supermemberTemp">
+            <p>
+                <img src="img/super_member.png">
+                <span class="font-weight-bolder text-dark">超级会员</span>
+                <span>• 每月享超值权益</span>
+                <a href="login.html"> 立即开通 &gt; </a>
+            </p>
     </div>
 </template>
 <!-- 推荐商家部分 -->
@@ -119,13 +113,13 @@
 <!--推荐方式-->
 <template id="recommendTypeTemp">
     <div class="container-fluid recommendTypeTemp text-muted">
-        <div class="row text-center">
+        <div class="row">
             <h7 class="col-3">综合排序<i class="fa fa-caret-down"></i></h7>
             <h7 class="col-3">距离最近</h7>
             <h7 class="col-3">销量最高</h7>
             <h7 class="col-3">筛选<i class="fa fa-filter"></i></h7>
         </div>
-    </div><br/>
+    </div>
 </template>
 
 <!--推荐商户模板-->
@@ -133,7 +127,7 @@
     <div class="container-fluid lists">
         <div v-for="(item,index) in $root.recommendMerchant" class="row  text-muted">
             <div class="col-12 col-sm-2">
-                <img v-bind:src="item.imgSrc" :alt="item.name"/>
+                <img v-bind:src="item.imgSrc" :alt="item.name" />
             </div>
             <div class="col-8 col-sm-6">
                 <h3 class="font-weight-bolder text-dark">{{item.name}}</h3>
@@ -143,90 +137,40 @@
                 <p><span class="business-info-promotion-left-incon">新 </span>{{item.new}}</p>
                 <p><span class="business-info-promotion-left-incon">特 </span>{{item.special}}</p>
             </div>
-            <div class="col-4 col-sm-4 text-right">
+            <div class="col-4 col-sm-4">
                 <p>.</p>
                 <p><span>{{item.delivery}}</span></p>
-                <p>{{item.distance}}km | {{item.time}}分钟</p><br/><br/>
-                <p>{{item.event}} <i class="fa fa fa-caret-down"></i></p>
+                <p>{{item.distance}}km | {{item.time}}分钟</p>
+                <p>{{item.event}} <i class="fa fa-arrow-circle-down"></i></p>
             </div>
-            <hr style="border-bottom: 1px solid lightgrey" width="100%"/>
         </div>
+        <hr/>
     </div>
 </template>
-<!--商家列表模板-->
+<!--商户列表模板-->
 <template id="merchantListTemp">
     <div>
         <topcpn>
             <div slot="info" class="col-10 offset-1 ">
-                <h1 class="display-4 text-white text-center ">商家列表</h1>
+                <h1 class="display-4 text-white text-center">商户列表</h1>
             </div>
         </topcpn>
-
-        <template id="businessListTemp">
-            <div class="container-fluid lists businessListTemp">
-                <div v-for="(item,index) in $root.shopLists" class="row text-muted ">
-                    <div class="col-2">
-                        <img v-bind:src="item.imgurl" :alt="item.sname"/>
-                    </div>
-                    <div class="col-10">
-                        <h1 class="font-weight-bolder text-dark">{{item.sname}}</h1><br/>
-                        <p>￥{{item.sstart}}起送 | ￥{{item.ssend}}配送</p>
-                        <p>{{item.stype}}</p>
-                    </div>
-                    <hr style="border-bottom: 1px solid lightgrey"/>
-                </div>
-            </div>
-        </template>
-        <businesslistcpn></businesslistcpn>
         <!-- 引入返回顶部的组件 -->
         <gotopcpn></gotopcpn>
         <!--  主导航条-->
         <mainnavcpn></mainnavcpn>
+
     </div>
 </template>
 
-<!--商家信息模板-->
+<!--商户列表模板-->
 <template id="merchantInfoTemp">
     <div>
         <topcpn>
-            <div slot="info" class="col-8 offset-2 ">
-                <h1 class="display-4 text-white text-center">商家信息</h1>
+            <div slot="info" class="col-10 offset-1 ">
+                <h1 class="display-4 text-white text-center">商户信息</h1>
             </div>
         </topcpn>
-        <template id="chooseFoodTemp">
-            <div class="container-fluid chooseFoodTemp">
-                <div class="row text-muted">
-                    <div class="col-10 offset-1 text-center">
-                        <img src="img/万家饺子-big.png"/>
-                    </div>
-                    <div class="col-12 text-center ">
-                        <h1 class="font-weight-bolder text-dark">万家饺子（软件园E18店）</h1><br/>
-                        <h4>￥15起送  ￥3配送</h4>
-                        <h4>各种饺子炒菜</h4><br/>
-                    </div>
-                </div>
-            </div>
-        </template>
-        <template id="businessInfoTemp">
-            <div class="container-fluid lists businessInfoTemp">
-                <div v-for="(item,index) in $root.foodLists" class="row text-muted ">
-                    <div class="col-2">
-                        <img v-bind:src="item.imgurl" :alt="item.fname"/>
-                    </div>
-                    <div class="col-8">
-                        <h1 class="font-weight-bolder text-dark">{{item.fname}}</h1><br/>
-                        <p>{{item.fingredients}}</p>
-                        <p>￥{{item.fprice}}</p>
-                    </div>
-                    <div class="col-2 text-center">
-                        <i class="fa fa-minus-circle">{{item.fcount}}</i><i class="fa fa-plus-circle"></i>
-                    </div>
-                    <hr style="border-bottom: 1px solid lightgrey" />
-                </div>
-            </div>
-        </template>
-        <choosefoodcpn></choosefoodcpn>
-        <businessinfocpn></businessinfocpn>
         <!-- 引入返回顶部的组件 -->
         <gotopcpn></gotopcpn>
         <!--  主导航条-->
@@ -331,16 +275,16 @@
         template: "#foodCategoryTemp",
     });
     let bannerCpn = Vue.extend({
-        template: '#bannerTemp',
+        template:'#bannerTemp',
     });
     let supermemberCpn = Vue.extend({
-        template: '#supermemberTemp',
+        template:'#supermemberTemp',
     });
     let recommendCpn = Vue.extend({
-        template: '#recommendTemp',
+        template:'#recommendTemp',
     });
     let recommendTypeCpn = Vue.extend({
-        template: '#recommendTypeTemp',
+        template:'#recommendTypeTemp',
     });
     let recommendMerchantCpn = Vue.extend({
         template: "#recommendMerchantTemp",
@@ -357,15 +301,6 @@
     let topCpn = Vue.extend({
         template: "#topTemp",
     });
-    let businessListCpn = Vue.extend({
-        template: "#businessListTemp",
-    });
-    let chooseFoodCpn = Vue.extend({
-        template: "#chooseFoodTemp",
-    });
-    let businessInfoCpn = Vue.extend({
-        template: "#businessInfoTemp",
-    });
 
     //注册为全局组件
     Vue.component("gotopcpn", goTopCpn);
@@ -373,17 +308,13 @@
     Vue.component("topcpn", topCpn);
     Vue.component("indexcpn", indexCpn);
     Vue.component("foodcategorycpn", foodCategoryCpn);
-    let bannercpn = Vue.component('bannercpn', bannerCpn);
-    let supermembercpn = Vue.component('supermembercpn', supermemberCpn);
-    let recommendcpn = Vue.component('recommendcpn', recommendCpn);
-    let recommendtypecpn = Vue.component('recommendtypecpn', recommendTypeCpn);
+    let bannercpn = Vue.component('bannercpn',bannerCpn);
+    let supermembercpn = Vue.component('supermembercpn',supermemberCpn);
+    let recommendcpn = Vue.component('recommendcpn',recommendCpn);
+    let recommendtypecpn = Vue.component('recommendtypecpn',recommendTypeCpn);
     Vue.component("recommendmerchantcpn", recommendMerchantCpn);
     Vue.component("merchantlistcpn", merchantListCpn);
     Vue.component("merchantinfocpn", merchantInfoCpn);
-    Vue.component("businesslistcpn", businessListCpn);
-    Vue.component("choosefoodcpn", chooseFoodCpn);
-    Vue.component("businessinfocpn", businessInfoCpn);
-
     //配置路由
     let routes = [
         {path: '/index', component: indexCpn},
@@ -409,9 +340,7 @@
         el: "#app",
         data: {
             foodCategory: [],
-            recommendMerchant: [],
-            shopLists: [],
-            foodLists:[]
+            recommendMerchant: []
         },
         router: router,
         //挂载钩子上添加获取数据的处理
@@ -420,8 +349,6 @@
                 function (res) {
                     this.foodCategory = res.body.foodCategory;
                     this.recommendMerchant = res.body.recommendMerchant;
-                    this.shopLists = res.body.shopLists;
-                    this.foodLists = res.body.foodLists;
                 }
             );
         }
